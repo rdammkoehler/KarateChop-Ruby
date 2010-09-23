@@ -1,13 +1,8 @@
 class KarateChop
 
   def chop(targetValue,sortedList)
-    rval = -1
-    if sortedList.size == 0
-      rval = -1
-    elsif sortedList.size == 1 
-      if sortedList[0] == targetValue
-        rval = 0
-      end
+    if sortedList.nil? || sortedList.size == 0
+       rval = -1
     else
       rval = bsearch(targetValue,sortedList)
     end
@@ -19,16 +14,20 @@ class KarateChop
   end
   
   def bsearch(targetValue,sortedList)
-    rval = -1
     mid = mid(sortedList)
-    if targetValue == sortedList[mid]
+    if sortedList.nil? || sortedList.size == 0
+      rval = -1
+    elsif targetValue == sortedList[mid]
       rval = mid
     elsif targetValue < sortedList[mid]
-      lowerList = sortedList[0,mid]
-      rval = bsearch(targetValue,lowerList)
+      rval = bsearch(targetValue,sortedList[0,mid])
     elsif targetValue > sortedList[mid]
-      upperList = sortedList[mid,sortedList.size-1]
-      rval = mid + bsearch(targetValue,upperList)
+      ival = bsearch(targetValue,sortedList[mid,sortedList.size-1])
+      if ival  > -1
+        rval = mid + ival
+      else 
+        rval = -1
+      end
     else 
       rval = -1
     end
