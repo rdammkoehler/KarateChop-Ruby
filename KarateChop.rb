@@ -21,7 +21,6 @@ class KarateChop
   def bsearch(targetValue,sortedList)
     rval = -1
     mid = mid(sortedList)
-    print "bsearch ", mid, "[", targetValue, "[", sortedList, "]]\n"
     if targetValue == sortedList[mid]
       rval = mid
     elsif targetValue < sortedList[mid]
