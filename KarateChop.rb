@@ -19,16 +19,10 @@ class KarateChop
   end
   
   def bsearch(targetValue,sortedList,mid)
+    rval = -1
     print mid, "[", targetValue, "[", sortedList, "]]\n"
-    if mid == nil
-      rval = -1
-    elsif targetValue == sortedList[mid]
+    if targetValue == sortedList[mid]
       rval = mid
-    elsif targetValue < sortedList[mid]
-      rval = bsearch(targetValue,sortedList[0,mid],mid(sortedList[0,mid]))
-    else
-      subList = sortedList[mid,sortedList.size-1]
-      rval = 1 + bsearch(targetValue,subList,mid(subList))
     end
     rval
   end
