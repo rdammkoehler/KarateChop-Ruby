@@ -27,8 +27,6 @@ class KarateChop
       if ival  > -1
         rval = mid + ival
       end
-    else 
-      rval = -1
     end
     rval
   end
