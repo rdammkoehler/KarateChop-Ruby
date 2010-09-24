@@ -1,7 +1,7 @@
 require 'test/unit'
 require 'MSKarateChop'
 
-class KarateChopTest < Test::Unit::TestCase
+class MSKarateChopTest < Test::Unit::TestCase
 
   @chopper 
   
