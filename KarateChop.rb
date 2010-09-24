@@ -1,7 +1,7 @@
 class KarateChop
 
   def chop(targetValue,sortedList)
-    if sortedList.nil? || sortedList.size == 0
+    if sortedList.nil? || sortedList.empty?
        rval = -1
     else
       rval = bsearch targetValue, sortedList
