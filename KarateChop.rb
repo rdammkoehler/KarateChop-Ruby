@@ -22,8 +22,7 @@ class KarateChop
       elsif targetValue < sortedList[mid]
         rval = bsearch(targetValue,sortedList[0,mid])
       else
-        ival = bsearch(targetValue,sortedList[mid,sortedList.size-1])
-        if ival  > -1
+        if -1 < ival = bsearch(targetValue,sortedList[mid,sortedList.size-1])
           rval = mid + ival
         end
       end
