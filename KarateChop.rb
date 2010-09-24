@@ -4,7 +4,7 @@ class KarateChop
     if sortedList.nil? || sortedList.size == 0
        rval = -1
     else
-      rval = bsearch(targetValue,sortedList)
+      rval = bsearch targetValue, sortedList
     end
     rval
   end
@@ -15,14 +15,14 @@ class KarateChop
   
   def bsearch(targetValue,sortedList)
     rval = -1
-    mid = mid(sortedList)
+    mid = mid sortedList
     if !sortedList.nil? && !sortedList.empty?
       if targetValue == sortedList[mid]
         rval = mid
       elsif targetValue < sortedList[mid]
-        rval = bsearch(targetValue,sortedList[0,mid])
+        rval = bsearch targetValue, sortedList[0,mid]
       else
-        if -1 < ival = bsearch(targetValue,sortedList[mid,sortedList.size-1])
+        if -1 < ival = bsearch(targetValue, sortedList[mid,sortedList.size-1])
           rval = mid + ival
         end
       end

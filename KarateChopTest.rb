@@ -10,7 +10,7 @@ class KarateChopTest < Test::Unit::TestCase
   end
   
   def test_nil_array_returns_minus_one
-    assert_equal -1, @chopper.chop(1,nil)
+    assert_equal -1, @chopper.chop(1, nil)
   end
   
   def test_empty_array_returns_minus_one
